@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Identicon</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="GitHub Identicons Icons ProfilePicture" />
+		<meta name="author" content="Identicon" />
+
+    <script src="js/angular.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+     function App($scope) {
+       $scope.query = "awesome"
+     }
+    </script>
+  </head>
+  <body ng-app>
+
+    <div class="container app" ng-controller="App">
+
+      <form role="form">
+        <div class="form-group">
+          <label for="gitHubUsername">GitHub Username</label>
+
+          <input  name="query" class="form-control query" value="{{query}}" type="text" ng-model="query" alt="Something">
+
+        </div>
+      </form>
+
+
+      <div ng-if="query === ''">
+        fella please type something!
+      </div>
+      <div ng-if="query !== ''">
+        <img src="https://github.com/identicons/{{query}}.png" />
+      </div>
+
+      <div class="work_by">
+        <a href="http://twitter.com/anildigital">@anildigital</a>
+      </div>
+    </div>
+
+  </body>
+</html>

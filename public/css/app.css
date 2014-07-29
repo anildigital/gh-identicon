@@ -1,0 +1,23 @@
+.app {
+    padding-left: 30%;
+    padding-top: 5%;
+}
+
+label[for=gitHubUsername] {
+   color: #999;
+}
+
+.query {
+    width:25%;
+    font-weight:bold;
+    font-size:1.4em;
+    margin-bottom: 3%;
+}
+
+.work_by a {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: #ddd;
+    z-index: 1000;
+}
