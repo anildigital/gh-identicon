@@ -30,7 +30,7 @@
        $scope.query = username
 
        $scope.tweet = function() {
-         var text = "My GitHub Identicon is http://github.com/identicons/" + $scope.query +".png Check out yours at " + window.location.href;
+         var text = "My GitHub Identicon is http://github.com/identicons/" + $scope.query +".png Check out yours at " + window.location.host;
          var href="http://twitter.com/intent/tweet?text=" + encodeURI(text);
          window.open(href, '_blank');
        }
