@@ -37,4 +37,5 @@ label[for=gitHubUsername] {
 
 .twitter-share-button {
     margin-top: 2%;
+    cursor: pointer;
 }
