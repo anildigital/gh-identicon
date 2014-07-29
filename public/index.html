@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Identicon</title>
+    <title>GitHub Identicon</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,38 +17,41 @@
     <link rel="stylesheet" href="css/app.css">
 
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
     <script type="text/javascript">
      function App($scope) {
-       $scope.query = "awesome"
+       var usernames = Array("unclebob", "dhh", "martinfowler", "matz", "defunkt");
+       var username = usernames[Math.floor(Math.random()*usernames.length)];
+       $scope.query = username
      }
     </script>
   </head>
   <body ng-app>
 
-    <div class="container app" ng-controller="App">
+    <div class="container">
+      <div class="app" ng-controller="App">
+        <div class="app_data">
+          <form role="form">
+            <div class="form-group">
+              <label for="gitHubUsername">GitHub Username</label>
 
-      <form role="form">
-        <div class="form-group">
-          <label for="gitHubUsername">GitHub Username</label>
+              <input  name="query" class="form-control query" value="{{query}}" type="text" ng-model="query" alt="Something">
 
-          <input  name="query" class="form-control query" value="{{query}}" type="text" ng-model="query" alt="Something">
+            </div>
+          </form>
+          <div ng-if="query === ''">
+            fella please type something!
+          </div>
+          <div ng-if="query !== ''">
+            <img src="https://github.com/identicons/{{query}}.png" class="img-responsive" />
+          </div>
 
+          <a href="https://twitter.com/share" class="twitter-share-button" data-text="My GitHub Identicon is http://github.com/identicons/{{query}}.png Check out yours at http://gh-identicon.herokuapp.com/" data-count="none">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+          <div class="work_by">
+            <a href="http://twitter.com/anildigital">@anildigital</a>
+          </div>
         </div>
-      </form>
-
-
-      <div ng-if="query === ''">
-        fella please type something!
-      </div>
-      <div ng-if="query !== ''">
-        <img src="https://github.com/identicons/{{query}}.png" />
-      </div>
-
-      <div class="work_by">
-        <a href="http://twitter.com/anildigital">@anildigital</a>
       </div>
     </div>
 
