@@ -19,8 +19,14 @@
 
     <script type="text/javascript">
      function App($scope) {
-       var usernames = Array("unclebob", "dhh", "martinfowler", "matz", "defunkt");
-       var username = usernames[Math.floor(Math.random()*usernames.length)];
+       var username;
+       if (window.location.pathname !== "/") {
+         username = window.location.pathname.replace("/", "");
+       }
+       else {
+         var usernames = Array("unclebob", "dhh", "martinfowler", "matz", "defunkt");
+         username = usernames[Math.floor(Math.random()*usernames.length)];
+       }
        $scope.query = username
 
        $scope.tweet = function() {
